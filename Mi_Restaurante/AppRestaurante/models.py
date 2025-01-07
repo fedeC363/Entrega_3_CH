@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Cocinero(models.Model):
+    pass
+
+class Comentarios(models.Model):
+    pass
+
+class Reserva(models.Model):
+    pass
