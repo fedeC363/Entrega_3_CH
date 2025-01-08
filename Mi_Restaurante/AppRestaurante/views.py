@@ -7,7 +7,11 @@ def cargar_cocinero(request):
         form = CocineroForms(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('lista_estudiantes')
+            return redirect('FALATA PONER ALGHO')
     else: 
         form = CocineroForms()
     return render(request, 'AppRestaurante/cargar_cocinero_form.html', {'form': form})
+
+def mostrar_reservas(request):
+    reservas = Reserva.objects.all()
+    return render(request, 'AppRestaurante/mostrar_reservas_froms.html', {'reservas': reservas})
