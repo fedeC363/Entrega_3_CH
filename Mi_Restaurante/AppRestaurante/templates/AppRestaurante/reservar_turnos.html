@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar Horario</title>
-</head>
-<body>
-    <h1>Reservar horario para cenar</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}} 
-        <button type="submit">Guardar Reserva</button>
-    </form>
-    <a href="{% url 'Inicio' %}">Ir al inicio</a> 
-</body>
-</html>
+{% extends "AppRestaurante/hacer_comentario.html" %}
+{% load static %}
+    <title>{% block title %}Reservar Horario{% endblock title %}</title>
+
+    <h1>{% block titulo %}Reservar horario para cenar{% endblock titulo %}</h1>
+
