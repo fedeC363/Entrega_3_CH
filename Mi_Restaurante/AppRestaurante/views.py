@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CocineroForms, Comentario_acerca_restauranteForms, ReservarForms
 from .models import Cocinero, Comentario_acerca_restaurante, Reservar
+from django.db.models import Q
 # Create your views here.
 
 
@@ -37,3 +38,24 @@ def hacer_comenterio(request):
 
 def inicio(request):
     return render(request, 'AppRestaurante/pagina_inicio.html')
+
+#===============================BUSQUEDA=============================================
+def buscar(request):
+    query = request.GET.get('q', '')
+    resultados = []
+
+    if query:
+        cocineros = Cocinero.objects.filter(
+            Q(nombre__icontains=query) | Q(apellido__icontains=query) | Q(email__icontains=query) | Q(especialidad__icontains=query)
+        )
+
+        for cocinero in cocineros:
+            resultados.append({
+                'tipo': 'Estudiante',
+                'nombre': cocinero.nombre,
+                'apellido': cocinero.apellido,
+                'email': cocinero.email,
+                'especialidad': cocinero.especialidad,
+            })
+
+    return render(request, 'AppRestaurante/busqueda_chef.html', {'resultados': resultados})

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import cargar_cocinero, mostrar_reservas, reservar_turno, inicio, hacer_comenterio
+from .views import cargar_cocinero, mostrar_reservas, reservar_turno, inicio, hacer_comenterio, buscar
 
 urlpatterns = [
     path('', inicio, name='Inicio'),
@@ -7,4 +7,5 @@ urlpatterns = [
     path('reservar_turno/', reservar_turno, name='reservar_turno'),
     path('reservas/', mostrar_reservas, name='mostrar_reservas'),
     path('hacer_comentario', hacer_comenterio, name='hacer_comentario'),
+    path('buscar/', buscar, name='buscar'),
 ]
