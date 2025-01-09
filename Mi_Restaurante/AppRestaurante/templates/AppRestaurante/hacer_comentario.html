@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacer Comentario</title>
+    <title>{% block title %}Hacer Comentario{% endblock title %}</title>
 </head>
 <body>
-    <h1>Por favor deje algun comentario acerca del restaurante.</h1>
+    <h1>{% block titulo %}Por favor deje algun comentario acerca del restaurante.{% endblock titulo %}</h1>
     <form method="post">
         {% csrf_token %}
         {{form.as_p}} 
-        <button type="submit">Guardar Comentario</button>
+        <button type="submit">Guardar</button>
     </form> 
     <a href="{% url 'Inicio' %}">Ir al inicio</a>
 </body>
