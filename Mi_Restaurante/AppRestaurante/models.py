@@ -16,16 +16,10 @@ class Comentario_acerca_restaurante(models.Model):
     def __str__(self):
         return f'Su comentario ah sido envidado con exito.'
 
-class Reserva(models.Model):
-    fecha = models.DateField(auto_now=False, auto_now_add=False)
-    horario = models.TimeField(auto_now=False, auto_now_add=False)
-    
-    def __str__(self):
-        return f'Usted ah reservado el dia {self.fecha} en el horario {self.horario}.'
     
 class Reservar(models.Model):
     fecha = models.DateField(auto_now=False, auto_now_add=False)
-    horario = models.TimeField(auto_now=False, auto_now_add=False)
+    hora = models.TimeField(auto_now=False, auto_now_add=False)
     
     def __str__(self):
         return f'Usted ah reservado el dia {self.fecha} en el horario {self.horario}.'

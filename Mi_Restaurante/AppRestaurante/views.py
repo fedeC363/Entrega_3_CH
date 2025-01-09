@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import CocineroForms, Comentario_acerca_restauranteForms, ReservaForms, ReservarForms
-from .models import Cocinero, Comentario_acerca_restaurante, Reserva, Reservar
+from .forms import CocineroForms, Comentario_acerca_restauranteForms, ReservarForms
+from .models import Cocinero, Comentario_acerca_restaurante, Reservar
 # Create your views here.
 
 def cargar_cocinero(request):
@@ -24,5 +24,5 @@ def reservar_turno(request):
     return render(request, 'AppRestaurante/reservar_turnos.html', {'form': form})
 
 def mostrar_reservas(request):
-    reservas = Reserva.objects.all()
-    return render(request, 'AppRestaurante/mostrar_reservas_froms.html', {'reservas': reservas})
+    reservas = Reservar.objects.all()
+    return render(request, 'AppRestaurante/mostrar_reservas.html', {'reservas': reservas})
