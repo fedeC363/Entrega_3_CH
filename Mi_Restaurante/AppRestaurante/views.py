@@ -3,12 +3,12 @@ from .forms import CocineroForms, Comentario_acerca_restauranteForms, ReservarFo
 from .models import Cocinero, Comentario_acerca_restaurante, Reservar
 # Create your views here.
 
+
 def cargar_cocinero(request):
     if request.method == 'POST':
         form = CocineroForms(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('reservar_turno')
     else: 
         form = CocineroForms()
     return render(request, 'AppRestaurante/cargar_cocinero.html', {'form': form})
@@ -18,7 +18,6 @@ def reservar_turno(request):
         form = ReservarForms(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('mostrar_reservas')
     else: 
         form = ReservarForms()
     return render(request, 'AppRestaurante/reservar_turnos.html', {'form': form})
@@ -26,3 +25,15 @@ def reservar_turno(request):
 def mostrar_reservas(request):
     reservas = Reservar.objects.all()
     return render(request, 'AppRestaurante/mostrar_reservas.html', {'reservas': reservas})
+
+def hacer_comenterio(request):
+    if request.method == 'POST':
+        form = Comentario_acerca_restauranteForms(request.POST)
+        if form.is_valid():
+            form.save()
+    else: 
+        form = Comentario_acerca_restauranteForms()
+    return render(request, 'AppRestaurante/hacer_comentario.html', {'form': form})
+
+def inicio(request):
+    return render(request, 'AppRestaurante/pagina_inicio.html')

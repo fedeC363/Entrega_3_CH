@@ -9,7 +9,7 @@ class CocineroForms(forms.ModelForm):
 class Comentario_acerca_restauranteForms(forms.ModelForm):
     class Meta:
         model = Comentario_acerca_restaurante
-        fields = ['comentario', 'valoracion']
+        fields = ['comentario']
           
 class ReservarForms(forms.ModelForm):
     class Meta:

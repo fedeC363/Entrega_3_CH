@@ -6,11 +6,12 @@
     <title>Reservas</title>
 </head>
 <body>
-    <h1>Fehca y horarios reservados</h1>\
+    <h1>Fecha y horarios reservados</h1>\
     <ul>
         {% for reserva in reservas%}
         <li>{{reserva.fecha}} {{reserva.hora}}</li>
         {% endfor %}
     </ul>
+    <a href="{% url 'Inicio' %}">Ir al inicio</a>
 </body>
 </html>
