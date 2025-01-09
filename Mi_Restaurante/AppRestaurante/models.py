@@ -22,3 +22,10 @@ class Reserva(models.Model):
     
     def __str__(self):
         return f'Usted ah reservado el dia {self.fecha} en el horario {self.horario}.'
+    
+class Reservar(models.Model):
+    fecha = models.DateField(auto_now=False, auto_now_add=False)
+    horario = models.TimeField(auto_now=False, auto_now_add=False)
+    
+    def __str__(self):
+        return f'Usted ah reservado el dia {self.fecha} en el horario {self.horario}.'

@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fede cuda</title>
+    <title>Reservas</title>
 </head>
 <body>
-    <h1>RHCP</h1>
+    <h1>Fehca y horarios reservados</h1>\
+    <ul>
+        {% for reserva in reservas%}
+        <li>{{reserva.fecha}} {{reserva.horario}}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
