@@ -8,9 +8,17 @@
 <body>
     <h1>Restaurante Peter Balzary</h1>
     <h3>Que desea hacer?</h3>
-    <a href="{% url 'cargar_cocinero' %}">Registrarse como cocinero</a>
-    <a href="{% url 'reservar_turno' %}">Reservar un turno</a>
-    <a href="{% url 'hacer_comentario' %}">Hacer un Comentario</a>
-    <a href="{% url 'buscar' %}">Buscar Cocinero</a>
+    <button>
+        <a href="{% url 'cargar_cocinero' %}">Registrarse como cocinero</a>
+    </button>
+    <button>
+        <a href="{% url 'reservar_turno' %}">Reservar un turno</a>
+    </button>
+    <button>
+        <a href="{% url 'hacer_comentario' %}">Hacer un Comentario</a>
+    </button>
+    <button>
+        <a href="{% url 'buscar' %}">Buscar Cocinero</a>
+    </button>
 </body>
 </html>
